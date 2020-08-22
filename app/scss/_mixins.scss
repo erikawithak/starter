@@ -1,0 +1,86 @@
+/* Global Mixins */
+
+@mixin max-width {
+    width: 100%;
+    padding: 0 2rem;
+
+    @include breakpoint('xl'){
+        max-width: 120rem;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    @include breakpoint('xxl'){
+        max-width: 140rem;
+    }
+    
+}
+
+@mixin x-close( $num, $width, $color: #000 ){
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $num;
+    height: $num;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        height: $num;
+        width: $width;
+        background-color: $color;
+    }
+
+    &:before {
+        transform: rotate(-45deg);
+    }
+
+    &:after {
+        transform: rotate(45deg);
+    }
+}
+
+@mixin background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin grid( $width: 50% ) {
+
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    @include breakpoint('md'){
+        margin: 0 -2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    & > li {
+
+        margin-bottom: 4rem;
+
+        @include breakpoint('md'){
+            width: calc( #{$width} - 4rem );
+            margin: 0 2rem;
+        }
+
+        &:last-child {
+
+            @include breakpoint('md'){
+                //margin-right: auto !important; // Had to remove cause it was causing issues
+            }
+            
+        }
+        
+    }
+    
+}
+

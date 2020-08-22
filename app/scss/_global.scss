@@ -1,0 +1,47 @@
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; // Preparing for REMs
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	color: $black;
+	font-size: 2rem; // 1rem = 10px
+	font-family: $body;
+	font-weight: 300;
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+
+// Links
+a {
+	text-decoration: none;
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+code {
+	display: block;
+	background-color: $gray;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
