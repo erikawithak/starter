@@ -12,7 +12,6 @@ Please see me in these other places:
 
 Contained in this repository is the following:
 
-* Sample HTML document
 * Gulp 4 - w/BrowserSync
 * SCSS files
 * Sample JS file
